@@ -1,0 +1,82 @@
+Documento de Especificação Funcional (DEF) -- Aplicativo PetVille Resort
+
+0.  Visão Geral do Projeto
+
+-   Nome do Software: Aplicativo PetVille Resort
+-   Versão: 1.0
+-   Data: \[19/11/2025\]
+-   Autor(es): \[Diego Vinicius e Rodrigo da Silva\]
+-   Aprovado por: \[Andre Madureira \]
+
+1.  Introdução
+
+1.1 Propósito Este documento descreve as funcionalidades, interfaces e
+comportamentos esperados para o Aplicativo PetVille Resort, cujo
+objetivo é permitir que tutores realizem reservas, acompanhem a estadia
+e tenham acesso a informações e serviços oferecidos pelo resort para
+cães e gatos.
+
+1.2 Escopo O aplicativo permitirá aos usuários: - Cadastrar perfis
+pessoais e perfis dos pets - Realizar reservas de hospedagem - Escolher
+serviços adicionais - Acompanhar a estadia do pet - Receber
+notificações - Visualizar informações institucionais - Comunicar-se via
+chat
+
+1.3 Definições DEF -- Documento de Especificação Funcional App --
+Aplicativo móvel Tutor -- Usuário responsável pelo animal Pet -- Cão ou
+gato hospedado LGPD -- Lei Geral de Proteção de Dados
+
+2.  Descrição Geral
+
+2.1 Perspectiva do Produto O app será conectado ao servidor PetVille,
+permitindo reservas, atualizações da estadia e comunicação.
+
+2.2 Funções do Produto - Cadastro de usuários e pets - Reservas -
+Pagamentos - Notificações - Chat - Histórico - Atualizações da estadia
+
+2.3 Características dos Usuários Tutores de pets com conhecimento básico
+de smartphones.
+
+2.4 Restrições - Compatível com Android 10+ e iOS 12+ - Deve seguir
+LGPD - Requer internet
+
+2.5 Suposições - Usuário possui internet - Servidores ativos - Dados
+verdadeiros sobre o pet
+
+3.  Requisitos Funcionais (RF) RF001 -- Cadastro de usuário RF002 --
+    Cadastro de pets RF003 -- Consulta de disponibilidade RF004 --
+    Reserva e comprovante RF005 -- Serviços adicionais RF006 --
+    Pagamentos RF007 -- Notificações RF008 -- Envio de fotos, vídeos e
+    relatórios RF009 -- Painel da estadia RF010 -- Chat RF011 --
+    Histórico RF012 -- Informações do resort RF013 -- Avaliações RF014
+    -- Edição e exclusão de cadastros
+
+4.  Requisitos Não Funcionais (RNF) RNF001 -- Tempo de resposta \< 3s
+    RNF002 -- Usabilidade e acessibilidade RNF003 -- Criptografia de
+    dados RNF004 -- Disponibilidade 99% RNF005 -- HTTPS RNF006 --
+    Otimização de desempenho RNF007 -- Manutenibilidade RNF008 -- LGPD
+
+5.  Interfaces do Sistema
+
+-   Telas de cadastro, reserva, acompanhamento, serviços, pagamento,
+    chat, avaliações
+
+6.  Requisitos de Qualidade Usabilidade, Confiabilidade,
+    Manutenibilidade, Portabilidade, Eficiência
+
+7.  Caso de Uso Exemplo -- Realizar Reserva
+
+8.  Selecionar pet
+
+9.  Selecionar datas
+
+10. Escolher quarto
+
+11. Adicionar serviços
+
+12. Pagar
+
+13. Receber confirmação
+
+14. Casos de Teste (CT) CT001 -- Reserva simples CT002 -- Pagamento Pix
+    CT003 -- Atualizações da equipe CT004 -- Cadastro inválido
