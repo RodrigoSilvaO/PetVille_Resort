@@ -1,82 +1,178 @@
-Documento de Especificação Funcional (DEF) -- Aplicativo PetVille Resort
 
-0.  Visão Geral do Projeto
+# **Documento de Especificação Funcional (DEF)**
 
--   Nome do Software: Aplicativo PetVille Resort
--   Versão: 1.0
--   Data: \[19/11/2025\]
--   Autor(es): \[Diego Vinicius e Rodrigo da Silva\]
--   Aprovado por: \[Andre Madureira \]
+---
 
-1.  Introdução
+## 0. Visão geral do projeto
 
-1.1 Propósito Este documento descreve as funcionalidades, interfaces e
-comportamentos esperados para o Aplicativo PetVille Resort, cujo
-objetivo é permitir que tutores realizem reservas, acompanhem a estadia
-e tenham acesso a informações e serviços oferecidos pelo resort para
-cães e gatos.
+- **Nome do Software**:Aplicativo PetVille Resort
+- **Versão:** 1.0
+- **Data:** \[19/11/2025\]
+- **Autor(es):** \[Diego Vinicius e Rodrigo da Silva\]
+- **Aprovado por:** \[Andre Madureira \]
 
-1.2 Escopo O aplicativo permitirá aos usuários: - Cadastrar perfis
-pessoais e perfis dos pets - Realizar reservas de hospedagem - Escolher
-serviços adicionais - Acompanhar a estadia do pet - Receber
-notificações - Visualizar informações institucionais - Comunicar-se via
-chat
+## 1. Introdução
 
-1.3 Definições DEF -- Documento de Especificação Funcional App --
-Aplicativo móvel Tutor -- Usuário responsável pelo animal Pet -- Cão ou
-gato hospedado LGPD -- Lei Geral de Proteção de Dados
+### 1.1 Propósito
 
-2.  Descrição Geral
+Este documento descreve as funcionalidades, interfaces e comportamentos esperados para o Aplicativo PetVille Resort, cujo objetivo é permitir que tutores realizem reservas, acompanhem a estadia e tenham acesso a informações e serviços oferecidos pelo resort para cães e gatos.
 
-2.1 Perspectiva do Produto O app será conectado ao servidor PetVille,
-permitindo reservas, atualizações da estadia e comunicação.
+### 1.2 Escopo
 
-2.2 Funções do Produto - Cadastro de usuários e pets - Reservas -
-Pagamentos - Notificações - Chat - Histórico - Atualizações da estadia
+O aplicativo permitirá aos usuários:
 
-2.3 Características dos Usuários Tutores de pets com conhecimento básico
-de smartphones.
+* Cadastrar perfis pessoais e perfis dos pets;
+* Realizar reservas de hospedagem;
+* Escolher serviços adicionais (banho, tosa, alimentação personalizada, veterinário);
+* Acompanhar a estadia do pet por meio de fotos, vídeos e relatórios diários ;
+* Receber notificações sobre atividades e cuidados;
+* Visualizar informações institucionais e estrutura do resort.
 
-2.4 Restrições - Compatível com Android 10+ e iOS 12+ - Deve seguir
-LGPD - Requer internet
+O sistema será desenvolvido para Android e iOS, sendo projetado para uso por tutores de animais domésticos, especialmente cães e gatos.
 
-2.5 Suposições - Usuário possui internet - Servidores ativos - Dados
-verdadeiros sobre o pet
+### 1.3 Definições, acrônimos e abreviações
 
-3.  Requisitos Funcionais (RF) RF001 -- Cadastro de usuário RF002 --
-    Cadastro de pets RF003 -- Consulta de disponibilidade RF004 --
-    Reserva e comprovante RF005 -- Serviços adicionais RF006 --
-    Pagamentos RF007 -- Notificações RF008 -- Envio de fotos, vídeos e
-    relatórios RF009 -- Painel da estadia RF010 -- Chat RF011 --
-    Histórico RF012 -- Informações do resort RF013 -- Avaliações RF014
-    -- Edição e exclusão de cadastros
+| Termo   |               Definição                           |
+| ------- | ------------------------------------------------- |
+| DEF     | Documento de Especificação Funcional              |
+| App     | Aplicativo móvel                                  |
+| Tutor   | Usuário responsável pelo animal                   |
+| Pet     | Cão ou gato hospedado no resort                   |
+| LGPD    | Lei Geral de Proteção de Dados                    |
 
-4.  Requisitos Não Funcionais (RNF) RNF001 -- Tempo de resposta \< 3s
-    RNF002 -- Usabilidade e acessibilidade RNF003 -- Criptografia de
-    dados RNF004 -- Disponibilidade 99% RNF005 -- HTTPS RNF006 --
-    Otimização de desempenho RNF007 -- Manutenibilidade RNF008 -- LGPD
 
-5.  Interfaces do Sistema
+## 2. Descrição Geral
 
--   Telas de cadastro, reserva, acompanhamento, serviços, pagamento,
-    chat, avaliações
+### 2.1 Perspectiva do Produto
 
-6.  Requisitos de Qualidade Usabilidade, Confiabilidade,
-    Manutenibilidade, Portabilidade, Eficiência
+O aplicativo será um sistema independente, conectado ao servidor do PetVille Resort para gerenciamento de reservas, envio de mídias e comunicação. Todo o fluxo de uso será mobile-first e voltado à praticidade.
 
-7.  Caso de Uso Exemplo -- Realizar Reserva
+### 2.2 Funções do Produto
 
-8.  Selecionar pet
+O sistema deve oferecer as seguintes funcionalidades:
 
-9.  Selecionar datas
+* Cadastro e autenticação de usuários;
+* Cadastro de pets;
+* Consulta de disponibilidade e realização de reservas;
+* Seleção de tipos de quarto e serviços adicionais;
+* Recebimento de atualizações da estadia;
+* Notificações em tempo real;
+* Chat entre usuário e equipe;
+* Acesso ao histórico de reservas;
+* Pagamento online.
 
-10. Escolher quarto
+### 2.3 Características dos Usuários
 
-11. Adicionar serviços
+Os usuários são tutores de pets, possuindo familiaridade básica com smartphones. Não são necessários conhecimentos técnicos adicionais.
 
-12. Pagar
+### 2.4 Restrições
 
-13. Receber confirmação
+* O aplicativo deve ser compatível com Android 10+ e iOS 12+.
+* O sistema deve operar conforme diretrizes da LGPD.
+* O envio de fotos e vídeos deve ocorrer apenas via Wi-Fi ou Internet móvel ativa.
+* A aplicação exige conexão com a internet para a maior parte das funcionalidades.
 
-14. Casos de Teste (CT) CT001 -- Reserva simples CT002 -- Pagamento Pix
-    CT003 -- Atualizações da equipe CT004 -- Cadastro inválido
+### 2.5 Suposições e Dependências
+
+* O usuário possui conexão estável com internet.
+* Os servidores do PetVille Resort permanecem ativos para envio/recebimento de dados.
+* O usuário fornecerá informações verídicas sobre o pet.
+
+---
+
+## 3. Requisitos Funcionais (RF)
+
+| Código |                                          Descrição                                                   |
+| ------ | ---------------------------------------------------------------------------------------------------- |
+| RF001  | O sistema deve permitir o cadastro de usuário por e-mail, telefone e senha.                          |
+| RF002  | O sistema deve permitir o cadastro de pets (nome, espécie, raça, idade, peso, necessidades especiais).                                                                                                     |
+| RF003  | O usuário deve poder consultar disponibilidade de hospedagem com seleção de datas, tipo de quarto e serviços extras.                                                                                                |
+| RF004  | O sistema deve permitir reserva de hospedagem e geração de comprovante digital.                      |
+| RF005  | O app deve exibir opções de serviços adicionais: banho, tosa, alimentação personalizada, veterinário.|
+| RF006  | O sistema deve permitir pagamento via cartão de crédito, Pix ou boleto.                              |
+| RF007  |  O usuário deve receber notificações push sobre atividades do pet (passeios, brincadeiras, 
+alimentação, etc.).                                                                                             |
+| RF008  | A equipe deve poder enviar fotos, vídeos e relatórios diários da estadia do pet.                                                                                                            |
+| RF009  | O usuário deve poder visualizar um painel com atualizações da estadia (humor, atividades, saúde, alimentação).                                                                                                   |
+ | RF010  | O sistema deve permitir um chat direto entre usuário e equipe.                                      |
+ | RF011 |  O usuário deve poder acessar histórico completo de reservas e serviços utilizados.                  |
+ | RF012 | O app deve conter uma seção com informações institucionais, estrutura física e serviços do resort.   |
+ | RF013 | O usuário deve poder avaliar serviços após a estadia do pet.                                         |
+ | RF014 | O sistema deve permitir edição e exclusão dos cadastros do usuário e dos pets.                       |
+---
+
+## 4. Requisitos Não Funcionais (RNF)
+
+| Código |                               Descrição                                                |
+| ------ | -------------------------------------------------------------------------------------- |
+| RNF001 |  O tempo de resposta para carregamento de telas deve ser inferior a 3 segundos.        |
+| RNF002 | A interface deve seguir princípios de usabilidade e acessibilidade (alto contraste,
+textos legíveis).                                                                                 |
+| RNF003 | O sistema deve criptografar dados sensíveis, incluindo senhas e informações pessoais.  |
+| RNF004 |O app deve estar disponível 99% do tempo.                                               |
+| RNF005 |A comunicação deve seguir protocolos seguros (HTTPS).                                   |
+| RNF006 |O aplicativo deve ser otimizado para baixo consumo de bateria e dados móveis.           |
+| RNF007 | O código deve seguir boas práticas de modularidade e manutenibilidade.                 |
+| RNF008 |O app deve estar em conformidade com a LGPD.                                            |
+---
+
+## 5. Interfaces do Sistema
+
+### 5.1 Interface do Usuário
+
+A interface deve conter:
+
+* Tela de login e cadastro;
+* Tela de cadastro dos pets;
+* Tela de disponibilidade e reserva;
+* Tela de serviços adicionais;
+* Tela de pagamento;
+* Painel de acompanhamento da estadia com fotos, vídeos e relatórios;
+* Tela de chat com a equipe;
+* Tela com informações sobre o resort;
+* Tela de avaliações;
+* Configurações do usuário.
+
+
+### 5.2 Interfaces de Hardware
+
+Não se aplicam.
+
+### 5.3 Interfaces de Software
+
+* 
+* 
+
+### 5.4 Interfaces de Comunicação
+
+O sistema utilizará comunicação via internet (Wi-Fi/4G/5G) por protocolo HTTPS.
+
+
+## 6. Requisitos de Qualidade
+
+| Atributo         | Descrição                                                                 |
+| ---------------- | ------------------------------------------------------------------------- |
+| Usabilidade      | Interface simples, intuitiva e acessível para usuários de todas as idades.|
+| Confiabilidade   | Alta disponibilidade e segurança no processamento de dados.               |
+| Manutenibilidade | Estrutura modular e documentação clara para facilitar melhorias futuras.  |
+| Portabilidade    | Suporte completo a dispositivos Android e iOS.                            |
+| Eficiência       | Boa performance no carregamento de dados e envio de mídias.               |
+
+## 7. Casos de Uso
+
+### 7.1. Realizar uma Soma
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+## **8. Casos de Teste (CT)**  
+
+| **Caso de Teste**        | **Entrada** | **Resultado Esperado** |
+| ------------------------ | ----------- | ---------------------- |
+| CT001 ( )                |             |                        |
+| CT002 ( )                |             |                        |
+| CT003 ( )                |             |                        |
