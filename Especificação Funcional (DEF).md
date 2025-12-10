@@ -160,19 +160,38 @@ O sistema utilizará comunicação via internet (Wi-Fi/4G/5G) por protocolo HTTP
 
 ## 7. Casos de Uso
 
-### 7.1. Realizar uma Soma
+### 7.1. Cadastrar perfil de usuário 
 
-- 
-- 
-- 
-- 
-- 
-- 
+- Usuário abre sistema
+- Usuário selecionma "Cadastrar-se"
+- Usuário insere seus dados
+- Usuário pressiona botão "Cadastrar-se"
+- Usuário é cadastrado no sistema.
+
+### 7.2. Cadastrar pet
+
+- Usuário abre sistema
+- Usuário faz login no sistema com sua conta
+- Usuário seleciona "Cadastrar pet"
+- Usuário insere informações do pet
+- Usuário pressiona botão "Cadastrar"
+- Usuário tem o pet cadastrado à sua conta
+
+### 7.3. Visualizar informações institucionais e estrutura do resort
+- Usuário abre sistema
+- Usuário clica no botão "Sobre nós"
+- Sistema abre uma tela com informações do Resort
+
+### 7.3. Chat
+- Usuário abre sistema
+- Usuário clica no botão com ícone de chat
+- Sistema abre o chat com conexão Usuário - Suporte
+
 
 ## **8. Casos de Teste (CT)**  
 
 | **Caso de Teste**        | **Entrada** | **Resultado Esperado** |
 | ------------------------ | ----------- | ---------------------- |
-| CT001 ( )                |             |                        |
-| CT002 ( )                |             |                        |
-| CT003 ( )                |             |                        |
+| CT001 (Cadastrar usuário)|Dados usuário|Usuário cadastrado no sistema |
+| CT002 (Cadastrart pet)  |Dados do pet |Pet cadastrado e anexado a conta de usuário |
+| CT003 (Visualizar informações)|Clique no botão "Sobre nós"| Abrir tela com informações sobre o resort|
