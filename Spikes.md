@@ -1,12 +1,24 @@
 Este documento tem como função mostrar o spikes do projeto PetVille Resort
 
-Spike #1: Design
-Objetivo:Testar 2 diferentes modelos de layout de checkout para a PetVille Resort e definir qual oferece melhor usabilidade.
-Ações:#1 Criar esboços de telas
-      #2 Decidir qual tela se adequa melhor ao sistema
+
+Spike:
+-Design
+
+Objetivo:
+-Testar 2 diferentes modelos de layout de checkout para a PetVille Resort e definir qual oferece melhor usabilidade.
+
+Atividades:
+- Criar esboços de telas
+- Decidir qual tela se adequa melhor ao sistema
+
+Resultado esperado:
+- 
+
+
+
 
 Spike #2: Banco de Dados
-Objetivo: Pesquisar e escolher a melhor opção de bando de dados
+Objetivo: Pesquisar e escolher a melhor opção de banco de dados
 Ações:#1 Pesquisar banco de Dados
       #2 Verificar viabilidade
       #3 Escolher banco de dados que será usado no sistema

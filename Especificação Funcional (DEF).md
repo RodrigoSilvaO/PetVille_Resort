@@ -6,7 +6,7 @@
 ## 0. Visão geral do projeto
 
 - **Nome do Software**:Aplicativo PetVille Resort
-- **Versão:** 1.0
+- **Versão:** 2.0
 - **Data:** \[19/11/2025\]
 - **Autor(es):** \[Diego Vinicius e Rodrigo da Silva\]
 - **Aprovado por:** \[Andre Madureira \]
@@ -84,14 +84,13 @@ Os usuários são tutores de pets, possuindo familiaridade básica com smartphon
 
 | Código |                                          Descrição                                                   |
 | ------ | ---------------------------------------------------------------------------------------------------- |
-| RF001  | O sistema deve permitir o cadastro de usuário por e-mail, telefone e senha.                          |
+| RF001  | O sistema deve permitir o cadastro de usuário com nome, e-mail, telefone e senha.                          |
 | RF002  | O sistema deve permitir o cadastro de pets (nome, espécie, raça, idade, peso, necessidades especiais).                                                                                                     |
 | RF003  | O usuário deve poder consultar disponibilidade de hospedagem com seleção de datas, tipo de quarto e serviços extras.                                                                                                |
 | RF004  | O sistema deve permitir reserva de hospedagem e geração de comprovante digital.                      |
 | RF005  | O app deve exibir opções de serviços adicionais: banho, tosa, alimentação personalizada, veterinário.|
 | RF006  | O sistema deve permitir pagamento via cartão de crédito, Pix ou boleto.                              |
-| RF007  |  O usuário deve receber notificações push sobre atividades do pet (passeios, brincadeiras, 
-alimentação, etc.).                                                                                             |
+| RF007  |  O usuário deve receber notificações push sobre atividades do pet (passeios, brincadeiras, alimentação,etc.).                                                                                             |
 | RF008  | A equipe deve poder enviar fotos, vídeos e relatórios diários da estadia do pet.                                                                                                            |
 | RF009  | O usuário deve poder visualizar um painel com atualizações da estadia (humor, atividades, saúde, alimentação).                                                                                                   |
  | RF010  | O sistema deve permitir um chat direto entre usuário e equipe.                                      |
@@ -103,95 +102,107 @@ alimentação, etc.).                                                           
 
 ## 4. Requisitos Não Funcionais (RNF)
 
-| Código |                               Descrição                                                |
-| ------ | -------------------------------------------------------------------------------------- |
-| RNF001 |  O tempo de resposta para carregamento de telas deve ser inferior a 3 segundos.        |
-| RNF002 | A interface deve seguir princípios de usabilidade e acessibilidade (alto contraste,
-textos legíveis).                                                                                 |
-| RNF003 | O sistema deve criptografar dados sensíveis, incluindo senhas e informações pessoais.  |
-| RNF004 |O app deve estar disponível 99% do tempo.                                               |
-| RNF005 |A comunicação deve seguir protocolos seguros (HTTPS).                                   |
-| RNF006 |O aplicativo deve ser otimizado para baixo consumo de bateria e dados móveis.           |
-| RNF007 | O código deve seguir boas práticas de modularidade e manutenibilidade.                 |
-| RNF008 |O app deve estar em conformidade com a LGPD.                                            |
----
 
-## 5. Interfaces do Sistema
+Sistema detecta uma atualização relevante.
 
-### 5.1 Interface do Usuário
+Sistema envia notificação push para o usuário.
 
-A interface deve conter:
+Usuário recebe a notificação no dispositivo.
 
-* Tela de login e cadastro;
-* Tela de cadastro dos pets;
-* Tela de disponibilidade e reserva;
-* Tela de serviços adicionais;
-* Tela de pagamento;
-* Painel de acompanhamento da estadia com fotos, vídeos e relatórios;
-* Tela de chat com a equipe;
-* Tela com informações sobre o resort;
-* Tela de avaliações;
-* Configurações do usuário.
+Usuário pode abrir o aplicativo para visualizar detalhes.
 
+8.6 Cenário – Acessar histórico de reservas
 
-### 5.2 Interfaces de Hardware
+Ator: Usuário
 
-Não se aplicam.
+Fluxo principal:
 
-### 5.3 Interfaces de Software
+Usuário abre o aplicativo.
 
-* 
-* 
+Usuário realiza login.
 
-### 5.4 Interfaces de Comunicação
+Usuário seleciona “Histórico de reservas”.
 
-O sistema utilizará comunicação via internet (Wi-Fi/4G/5G) por protocolo HTTPS.
+Sistema consulta as reservas registradas.
 
+Sistema exibe lista de reservas realizadas.
 
-## 6. Requisitos de Qualidade
+8.7 Cenário – Pagar online
 
-| Atributo         | Descrição                                                                 |
-| ---------------- | ------------------------------------------------------------------------- |
-| Usabilidade      | Interface simples, intuitiva e acessível para usuários de todas as idades.|
-| Confiabilidade   | Alta disponibilidade e segurança no processamento de dados.               |
-| Manutenibilidade | Estrutura modular e documentação clara para facilitar melhorias futuras.  |
-| Portabilidade    | Suporte completo a dispositivos Android e iOS.                            |
-| Eficiência       | Boa performance no carregamento de dados e envio de mídias.               |
+Ator: Usuário
 
-## 7. Casos de Uso
+Fluxo principal:
 
-### 7.1. Cadastrar perfil de usuário 
+Usuário acessa o sistema.
 
-- Usuário abre sistema
-- Usuário selecionma "Cadastrar-se"
-- Usuário insere seus dados
-- Usuário pressiona botão "Cadastrar-se"
-- Usuário é cadastrado no sistema.
+Usuário realiza login.
 
-### 7.2. Cadastrar pet
+Usuário acessa uma reserva realizada.
 
-- Usuário abre sistema
-- Usuário faz login no sistema com sua conta
-- Usuário seleciona "Cadastrar pet"
-- Usuário insere informações do pet
-- Usuário pressiona botão "Cadastrar"
-- Usuário tem o pet cadastrado à sua conta
+Sistema apresenta as formas de pagamento disponíveis.
 
-### 7.3. Visualizar informações institucionais e estrutura do resort
-- Usuário abre sistema
-- Usuário clica no botão "Sobre nós"
-- Sistema abre uma tela com informações do Resort
+Usuário seleciona o método de pagamento.
 
-### 7.3. Chat
-- Usuário abre sistema
-- Usuário clica no botão com ícone de chat
-- Sistema abre o chat com conexão Usuário - Suporte
+Sistema processa o pagamento.
 
+Sistema confirma o pagamento.
 
-## **8. Casos de Teste (CT)**  
+Fluxos alternativos:
+
+Pagamento recusado
+
+Sistema informa erro.
+
+Usuário deve escolher outro método ou tentar novamente.
+
+8.8 Cenário – Visualizar informações institucionais
+
+Ator: Usuário
+
+Fluxo principal:
+
+Usuário abre o aplicativo.
+
+Usuário seleciona a opção “Sobre nós”.
+
+Sistema exibe informações sobre:
+
+História do resort
+
+Estrutura
+
+Serviços oferecidos
+
+Usuário visualiza as informações.
+
+8.9 Cenário – Chat com suporte
+
+Ator: Usuário
+
+Fluxo principal:
+
+Usuário abre o aplicativo.
+
+Usuário seleciona o ícone de chat.
+
+Sistema abre a interface de chat.
+
+Usuário envia mensagem ao suporte.
+
+Sistema encaminha a mensagem.
+
+Suporte responde ao usuário.
+
+## **9. Casos de Teste (CT)**  
 
 | **Caso de Teste**        | **Entrada** | **Resultado Esperado** |
 | ------------------------ | ----------- | ---------------------- |
-| CT001 (Cadastrar usuário)|Dados usuário|Usuário cadastrado no sistema |
-| CT002 (Cadastrart pet)  |Dados do pet |Pet cadastrado e anexado a conta de usuário |
-| CT003 (Visualizar informações)|Clique no botão "Sobre nós"| Abrir tela com informações sobre o resort|
+|CT001 (Cadastrar usuário)|Dados usuário|Usuário cadastrado no sistema
+|CT002 (Cadastrar pet)|Dados do pet|Pet cadastrado e anexado a conta de usuário
+|CT003 (Visualizar informações)|Clique no botão "Sobre nós"|Abrir tela com informações sobre o resort
+|CT004 (Consultar disponibilidade)|Clique no botão "Verificar disponibilidade"|Sistema exibe os quartos disponíveis
+|CT005 (Realizar reserva)|Dados da reserva (pet, quarto, serviços extras)|Reserva registrada no sistema
+|CT006 (Histórico de reservas)|Clique no botão "Histórico de reservas"|Sistema exibe o histórico de reservas do usuário
+|CT007 (Pagamento online)|Escolha da forma de pagamento|Sistema processa o pagamento da reserva
+|CT008 (Notificação de atualização)|Atualização no sistema|Usuário recebe notificação sobre a atualização
+|CT009 (Acessar chat)|Clique no ícone de chat|Sistema abre o chat com suporte
