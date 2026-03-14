@@ -1,0 +1,119 @@
+' Diagramas de atividade - PetVille Resort
+' Contém diagramas para os fluxos principais listados na especificação
+
+@startuml Cadastro_Perfil_Usuario
+title Cadastro de perfil de usuário
+start
+:Abrir aplicativo;
+:Selecionar "Cadastrar-se";
+:Exibir formulário de cadastro;
+:Preencher nome, e-mail, telefone e senha;
+if (Dados válidos?) then (sim)
+  :Validar dados;
+  :Registrar usuário no banco de dados;
+  :Confirmar cadastro;
+  stop
+else (não)
+  if (E-mail já cadastrado?) then (sim)
+    :Exibir erro: "E-mail já cadastrado";
+    :Solicitar outro e-mail;
+    stop
+  else (não)
+    :Exibir erro: "Campos obrigatórios faltando";
+    :Solicitar preenchimento dos campos faltantes;
+    stop
+  endif
+endif
+@enduml
+
+@startuml Cadastrar_Pet
+title Cadastrar pet
+start
+:Abrir aplicativo;
+:Realizar login;
+:Selecionar "Cadastrar pet";
+:Exibir formulário de cadastro do pet;
+:Preencher nome, espécie, raça, idade, peso e necessidades especiais;
+if (Campos obrigatórios preenchidos?) then (sim)
+  :Registrar pet no banco de dados;
+  :Associar pet à conta do usuário;
+  :Confirmar cadastro;
+  stop
+else (não)
+  :Exibir mensagem: "Preencha os campos obrigatórios";
+  stop
+endif
+@enduml
+
+@startuml Realizar_Reserva
+title Realizar reserva
+start
+:Abrir aplicativo;
+:Realizar login;
+:Selecionar "Verificar disponibilidade";
+:Exibir opções de pesquisa (data, tipo de quarto, serviços extras);
+:Usuário define filtros;
+:Sistema processa a busca;
+if (Há disponibilidade?) then (sim)
+  :Exibir quartos disponíveis;
+  :Usuário seleciona quarto e serviços;
+  :Usuário seleciona pet;
+  :Usuário confirma a reserva;
+  :Sistema registra a reserva;
+  :Gerar comprovante digital de reserva (temporário);
+  partition Pagamento {
+    :Apresentar formas de pagamento (Cartão, Pix, Boleto);
+    if (Usuário escolhe pagar agora?) then (sim)
+      :Processar pagamento;
+      if (Pagamento aprovado?) then (sim)
+        :Confirmar pagamento;
+        :Enviar recibo/nota ao usuário;
+      else (não)
+        :Informar erro de pagamento;
+        :Oferecer tentar outro método;
+      endif
+    else (não)
+      :Marcar como pendente → Aguardar pagamento posterior;
+    endif
+  }
+  :Exibir confirmação final ao usuário;
+  stop
+else (não)
+  :Informar: "Sem disponibilidade para a data selecionada";
+  stop
+endif
+@enduml
+
+@startuml Notificar_Atualizacoes
+title Notificar atualizações (evento do sistema)
+start
+:Evento de atualização detectado ;
+:Gerar notificação;
+if (Dispositivo do usuário online?) then (sim)
+  :Enviar notificação push;
+  :Registrar envio no log;
+  stop
+else (não)
+  :Agendar reenvio/armazenar notificação para envio futuro;
+  stop
+endif
+@enduml
+
+@startuml Chat_Com_Suporte
+title Chat com suporte
+start
+:Abrir aplicativo;
+:Selecionar ícone de chat;
+:Abrir interface de chat;
+fork
+  :Usuário digita e envia mensagem;
+  :Sistema encaminha mensagem para suporte;
+fork again
+  :Suporte recebe e analisa mensagem;
+  :Suporte responde;
+end fork
+:Sistema entrega resposta ao usuário;
+stop
+@enduml
+
+' Fim do arquivo
