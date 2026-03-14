@@ -1,35 +1,13 @@
-Este documento tem como função mostrar o spikes do projeto PetVille Resort
+# Spikes
 
+Este documento resume os spikes do projeto PetVille Resort em formato de tabela para fácil leitura e manutenção.
 
-Spike:
--Design
+| Spike | Objetivo | Ações principais | Resultado esperado | Status |
+| ----- | -------: | ---------------- | ------------------ | :----: |
+| 1 — Design | Testar 2 modelos de layout de checkout e avaliar usabilidade | Criar esboços de telas; validar com usuários; selecionar layout | Decisão da tela e mockup pronto | A fazer |
+| 2 — Banco de Dados | Pesquisar e escolher a melhor opção de banco de dados para o projeto | Pesquisar opções; verificar viabilidade técnica e custos; escolher solução | Banco de dados definido com justificativa | A fazer |
+| 3 — Linguagem de programação | Pesquisar e decidir a linguagem a ser usada no desenvolvimento | Pesquisar linguagens; avaliar dificuldade e afinidade da equipe; decidir linguagem | Linguagem escolhida e documentada | Concluído |
+| 4 — IDEs | Definir as IDEs recomendadas para o desenvolvimento | Cada desenvolvedor testa/define sua IDE; consolidar recomendações | Lista de IDEs recomendadas e configurações básicas | Concluído |
+| 5 — Framework | Pesquisar e escolher o framework mais adequado para o projeto | Avaliar frameworks; testar integração com libs; decidir framework | Framework escolhido e motivação registrada | Concluído |
 
-Objetivo:
--Testar 2 diferentes modelos de layout de checkout para a PetVille Resort e definir qual oferece melhor usabilidade.
-
-Atividades:
-- Criar esboços de telas
-- Decidir qual tela se adequa melhor ao sistema
-
-Resultado esperado:
-- 
-
-
-
-
-Spike #2: Banco de Dados
-Objetivo: Pesquisar e escolher a melhor opção de banco de dados
-Ações:#1 Pesquisar banco de Dados
-      #2 Verificar viabilidade
-      #3 Escolher banco de dados que será usado no sistema
-
-Spike #3: Linguagem de programação
-Objetivo: Pesquisar e escolher linguagem de programaçãop para desenvolver o projeto
-Ações: #1 Pesquisar linguagem
-       #2 Verificar o nível de dificuldade e se todos os desenvolvedores tem afinidade 
-       #3 Decidir linguagem
-
-Spike #4: IDE
-Objetivo: Decidir IDE usada no desenvolvimento do sistema
-Ações: #1 Cada desenvolvedor escolhe sua IDE
 
