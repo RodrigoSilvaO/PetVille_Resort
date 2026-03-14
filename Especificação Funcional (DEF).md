@@ -102,96 +102,265 @@ Os usuários são tutores de pets, possuindo familiaridade básica com smartphon
 
 ## 4. Requisitos Não Funcionais (RNF)
 
+| Código |                               Descrição                                                |
+| ------ | -------------------------------------------------------------------------------------- |
+| RNF001 |  O tempo de resposta para carregamento de telas deve ser inferior a 3 segundos.        |
+| RNF002 | A interface deve seguir princípios de usabilidade e acessibilidade (alto contraste,
+textos legíveis).                                                                                 |
+| RNF003 | O sistema deve criptografar dados sensíveis, incluindo senhas e informações pessoais.  |
+| RNF004 |O app deve estar disponível 99% do tempo.                                               |
+| RNF005 |A comunicação deve seguir protocolos seguros (HTTPS).                                   |
+| RNF006 |O aplicativo deve ser otimizado para baixo consumo de bateria e dados móveis.           |
+| RNF007 | O código deve seguir boas práticas de modularidade e manutenibilidade.                 |
+| RNF008 |O app deve estar em conformidade com a LGPD.                                            |
+---
 
-Sistema detecta uma atualização relevante.
+## 5. Interfaces do Sistema
 
-Sistema envia notificação push para o usuário.
+### 5.1 Interface do Usuário
 
-Usuário recebe a notificação no dispositivo.
+A interface deve conter:
 
-Usuário pode abrir o aplicativo para visualizar detalhes.
+* Tela de login e cadastro;
+* Tela de cadastro dos pets;
+* Tela de disponibilidade e reserva;
+* Tela de serviços adicionais;
+* Tela de pagamento;
+* Painel de acompanhamento da estadia com fotos, vídeos e relatórios;
+* Tela de chat com a equipe;
+* Tela com informações sobre o resort;
+* Tela de avaliações;
+* Configurações do usuário.
 
-8.6 Cenário – Acessar histórico de reservas
 
-Ator: Usuário
+### 5.2 Interfaces de Hardware
 
-Fluxo principal:
+Não se aplicam.
 
-Usuário abre o aplicativo.
+### 5.3 Interfaces de Software
 
-Usuário realiza login.
+* 
+* 
 
-Usuário seleciona “Histórico de reservas”.
+### 5.4 Interfaces de Comunicação
 
-Sistema consulta as reservas registradas.
+O sistema utilizará comunicação via internet (Wi-Fi/4G/5G) por protocolo HTTPS.
 
-Sistema exibe lista de reservas realizadas.
 
-8.7 Cenário – Pagar online
+## 6. Requisitos de Qualidade
 
-Ator: Usuário
+| Atributo         | Descrição                                                                 |
+| ---------------- | ------------------------------------------------------------------------- |
+| Usabilidade      | Interface simples, intuitiva e acessível para usuários de todas as idades.|
+| Confiabilidade   | Alta disponibilidade e segurança no processamento de dados.               |
+| Manutenibilidade | Estrutura modular e documentação clara para facilitar melhorias futuras.  |
+| Portabilidade    | Suporte completo a dispositivos Android e iOS.                            |
+| Eficiência       | Boa performance no carregamento de dados e envio de mídias.               |
 
-Fluxo principal:
+## 7. Casos de Uso
 
-Usuário acessa o sistema.
+### 7.1. Cadastrar perfil de usuário 
 
-Usuário realiza login.
+- Usuário abre sistema
+- Usuário seleciona "Cadastrar-se"
+- Usuário preenche os campos nome, e-mail, telefone e senha
+- Usuário pressiona botão "Cadastrar-se"
+- Usuário é cadastrado no sistema.
 
-Usuário acessa uma reserva realizada.
+### 7.2. Cadastrar pet
 
-Sistema apresenta as formas de pagamento disponíveis.
+- Usuário abre sistema
+- Usuário faz login no sistema com sua conta
+- Usuário seleciona "Cadastrar pet"
+- Usuário preenche os campos nome, espécie, raça, idade, peso e necessidades especiais.
+- Usuário pressiona botão "Cadastrar"
+- Usuário tem o pet cadastrado no sistema e associado à sua conta
 
-Usuário seleciona o método de pagamento.
+### 7.3. Consultar disponibilidade
 
-Sistema processa o pagamento.
+- Usuário abre sistema
+- Usuário faz login 
+- Usuário seleciona "Verificar disponibilidade" 
+- Sistema mostra os dados
+- Usuário pode escolher filtros: Data, tipo de quarto e serviço extra
 
-Sistema confirma o pagamento.
+### 7.4. Realizar reservas
 
-Fluxos alternativos:
+- Usuário abre sistema
+- Usuário faz login no sistema 
+- Usuário seleciona "Fazer reserva"
+- Usuário seleciona Tipo de quarto e (se houver) serviços extras
+- Usuário define o pet
+- Usuário conclui reserva
+- Sistema realiza a reserva
+- Sistema exibe na ela um comprovate digital de reserva
 
-Pagamento recusado
+### 7.5. Notificar atualizações 
 
-Sistema informa erro.
+- Notificação push implementada
+- Sistema notifica usuário sobre atualizações 
 
-Usuário deve escolher outro método ou tentar novamente.
+### 7.6. Acessar histórico de reservas
 
-8.8 Cenário – Visualizar informações institucionais
+- Usuário abre sistema
+- Usuário faz login no sistema
+- Usuário seleciona "Histórico de reservas"
+- Sistema exibe em formato de histórico todas as reservas realizadas
 
-Ator: Usuário
+### 7.7. Pagar online
 
-Fluxo principal:
+- Usuário abre sistema
+- Usuário faz login no sistema
+- Usuário, após ter feito a reserva, aparece as formas de pagamento 
 
-Usuário abre o aplicativo.
+### 7.8. Visualizar informações institucionais e estrutura do resort
+- Usuário abre sistema
+- Usuário seleciona "Sobre nós"
+- Sistema abre uma tela com informações do Resort
 
-Usuário seleciona a opção “Sobre nós”.
+### 7.9. Chat
+- Usuário abre sistema
+- Usuário seleciona o botão com ícone de chat
+- Sistema abre o chat com conexão Usuário - Suporte
 
-Sistema exibe informações sobre:
+## 8. Cenários de Uso
 
-História do resort
+### 8.1 Cenário – Cadastrar perfil de usuário
+**Ator:** Usuário
 
-Estrutura
+**Fluxo principal:**
+1. Usuário abre o aplicativo.
+2. Usuário seleciona a opção “Cadastrar-se”.
+3. Sistema exibe formulário de cadastro.
+4. Usuário preenche os campos nome, e-mail, telefone e senha.
+5. Usuário pressiona o botão “Cadastrar-se”.
+6. Sistema valida os dados informados.
+7. Sistema registra o usuário no banco de dados.
+8. Sistema confirma o cadastro e permite acesso ao sistema.
 
-Serviços oferecidos
+**Fluxos alternativos:**
+- E-mail já cadastrado:
+  1. Sistema identifica e-mail existente.
+  2. Sistema exibe mensagem de erro.
+  3. Usuário deve inserir outro e-mail.
+- Campos obrigatórios não preenchidos:
+  1. Sistema solicita preenchimento dos campos faltantes.
 
-Usuário visualiza as informações.
+### 8.2 Cenário – Cadastrar pet
+**Ator:** Usuário
 
-8.9 Cenário – Chat com suporte
+**Fluxo principal:**
+1. Usuário acessa o aplicativo.
+2. Usuário realiza login.
+3. Usuário seleciona a opção “Cadastrar pet”.
+4. Sistema exibe formulário de cadastro.
+5. Usuário preenche nome, espécie, raça, idade, peso e necessidades especiais.
+6. Usuário seleciona “Cadastrar”.
+7. Sistema registra o pet no banco de dados.
+8. Sistema associa o pet à conta do usuário.
+9. Sistema confirma o cadastro.
 
-Ator: Usuário
+**Fluxos alternativos:**
+- Campos obrigatórios não preenchidos:
+  1. Sistema solicita preenchimento correto dos campos obrigatórios.
 
-Fluxo principal:
+### 8.3 Cenário – Consultar disponibilidade
+**Ator:** Usuário
 
-Usuário abre o aplicativo.
+**Fluxo principal:**
+1. Usuário abre o sistema.
+2. Usuário realiza login.
+3. Usuário seleciona “Verificar disponibilidade”.
+4. Sistema exibe opções de pesquisa.
+5. Usuário define filtros: data, tipo de quarto e serviços extras.
+6. Sistema processa a busca.
+7. Sistema exibe os quartos disponíveis.
 
-Usuário seleciona o ícone de chat.
+**Fluxos alternativos:**
+- Nenhuma disponibilidade encontrada:
+  1. Sistema informa que não há vagas para a data selecionada.
 
-Sistema abre a interface de chat.
+### 8.4 Cenário – Realizar reserva
+**Ator:** Usuário
 
-Usuário envia mensagem ao suporte.
+**Fluxo principal:**
+1. Usuário abre o aplicativo.
+2. Usuário faz login.
+3. Usuário seleciona "Fazer reserva".
+4. Sistema exibe opções de quartos disponíveis.
+5. Usuário escolhe tipo de quarto e serviços extras (opcionais).
+6. Usuário seleciona o pet que ficará hospedado.
+7. Usuário confirma a reserva.
+8. Sistema registra a reserva.
+9. Sistema gera comprovante digital de reserva.
+10. Sistema exibe confirmação na tela.
 
-Sistema encaminha a mensagem.
+**Fluxos alternativos:**
+- Quarto indisponível:
+  1. Sistema informa indisponibilidade.
+  2. Usuário deve escolher outra opção.
 
-Suporte responde ao usuário.
+### 8.5 Cenário – Notificar atualizações
+**Ator:** Sistema
+
+**Fluxo principal:**
+1. Sistema detecta uma atualização relevante (ex.: foto, relatório, evento de saúde).
+2. Sistema envia notificação push para o usuário.
+3. Usuário recebe a notificação no dispositivo.
+4. Usuário pode abrir o aplicativo para visualizar detalhes.
+
+### 8.6 Cenário – Acessar histórico de reservas
+**Ator:** Usuário
+
+**Fluxo principal:**
+1. Usuário abre o aplicativo.
+2. Usuário realiza login.
+3. Usuário seleciona “Histórico de reservas”.
+4. Sistema consulta as reservas registradas.
+5. Sistema exibe lista de reservas realizadas.
+
+### 8.7 Cenário – Pagar online
+**Ator:** Usuário
+
+**Fluxo principal:**
+
+1. Usuário acessa o sistema.
+2. Usuário realiza login.
+3. Usuário acessa uma reserva realizada.
+4. Sistema apresenta as formas de pagamento disponíveis.
+5. Usuário seleciona o método de pagamento.
+6. Sistema processa o pagamento.
+7. Sistema confirma o pagamento.
+
+**Fluxos alternativos:**
+- Pagamento recusado
+1. Sistema informa erro.
+- Usuário deve escolher outro método ou tentar novamente.
+
+### 8.8 Cenário – Visualizar informações institucionais
+**Ator: Usuário**
+
+**Fluxo principal:**
+
+1. Usuário abre o aplicativo.
+2. Usuário seleciona a opção “Sobre nós”.
+3. Sistema exibe informações sobre:
+4. História do resort
+5. Estrutura
+6. Serviços oferecidos
+7. Usuário visualiza as informações.
+
+### 8.9 Cenário – Chat com suporte
+**Ator: Usuário**
+
+**Fluxo principal:**
+
+1. Usuário abre o aplicativo.
+2. Usuário seleciona o ícone de chat.
+3. Sistema abre a interface de chat.
+4. Usuário envia mensagem ao suporte.
+5. Sistema encaminha a mensagem.
+6. Suporte responde ao usuário.
 
 ## **9. Casos de Teste (CT)**  
 
