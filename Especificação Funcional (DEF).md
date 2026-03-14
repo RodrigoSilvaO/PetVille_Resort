@@ -1,4 +1,3 @@
-
 # **Documento de Especificação Funcional (DEF)**
 
 ---
@@ -223,144 +222,23 @@ O sistema utilizará comunicação via internet (Wi-Fi/4G/5G) por protocolo HTTP
 - Usuário seleciona o botão com ícone de chat
 - Sistema abre o chat com conexão Usuário - Suporte
 
-## 8. Cenários de Uso
+## 8. Cenários de Uso (resumo)
 
-### 8.1 Cenário – Cadastrar perfil de usuário
-**Ator:** Usuário
+A tabela a seguir resume os cenários de uso principais, o ator envolvido, um resumo do fluxo principal e os fluxos alternativos mais comuns.
 
-**Fluxo principal:**
-1. Usuário abre o aplicativo.
-2. Usuário seleciona a opção “Cadastrar-se”.
-3. Sistema exibe formulário de cadastro.
-4. Usuário preenche os campos nome, e-mail, telefone e senha.
-5. Usuário pressiona o botão “Cadastrar-se”.
-6. Sistema valida os dados informados.
-7. Sistema registra o usuário no banco de dados.
-8. Sistema confirma o cadastro e permite acesso ao sistema.
+| ID   | Cenário                             | Ator    | Fluxo principal (resumo)                                                                 | Fluxos alternativos (resumo)                                          |
+| ---- | ----------------------------------- | ------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 8.1  | Cadastrar perfil de usuário         | Usuário | Abrir app → Cadastrar-se → Preencher nome, e-mail, telefone, senha → Confirmar → Registrar | E-mail já cadastrado; Campos obrigatórios não preenchidos             |
+| 8.2  | Cadastrar pet                       | Usuário | Login → Cadastrar pet → Preencher dados (nome, espécie, raça, idade, peso, necessidades) → Registrar | Campos obrigatórios não preenchidos                                  |
+| 8.3  | Consultar disponibilidade           | Usuário | Login → Verificar disponibilidade → Definir filtros (data, tipo de quarto, serviços) → Exibir resultados | Nenhuma disponibilidade (informar ao usuário)                        |
+| 8.4  | Realizar reserva                    | Usuário | Login → Fazer reserva → Selecionar quarto e serviços → Escolher pet → Confirmar → Gerar comprovante | Quarto indisponível (solicitar nova opção)                           |
+| 8.5  | Notificar atualizações              | Sistema | Detecta evento relevante → Envia notificação push → Usuário visualiza no app             | N/A (falha de envio ou dispositivo sem conexão)                       |
+| 8.6  | Acessar histórico de reservas       | Usuário | Login → Histórico de reservas → Listar reservas realizadas                              | N/A (sem reservas, exibir mensagem)                                   |
+| 8.7  | Pagar online                        | Usuário | Acessar reserva → Selecionar forma de pagamento → Processar pagamento → Confirmar       | Pagamento recusado (tentar outro método ou repetir)                   |
+| 8.8  | Visualizar informações institucionais | Usuário | Abrir app → Sobre nós → Exibir história, estrutura e serviços                          | N/A                                                                   |
+| 8.9  | Chat com suporte                    | Usuário | Abrir chat → Enviar mensagem → Suporte responde                                         | Conexão indisponível (tentar novamente)                                |
 
-**Fluxos alternativos:**
-- E-mail já cadastrado:
-  1. Sistema identifica e-mail existente.
-  2. Sistema exibe mensagem de erro.
-  3. Usuário deve inserir outro e-mail.
-- Campos obrigatórios não preenchidos:
-  1. Sistema solicita preenchimento dos campos faltantes.
-
-### 8.2 Cenário – Cadastrar pet
-**Ator:** Usuário
-
-**Fluxo principal:**
-1. Usuário acessa o aplicativo.
-2. Usuário realiza login.
-3. Usuário seleciona a opção “Cadastrar pet”.
-4. Sistema exibe formulário de cadastro.
-5. Usuário preenche nome, espécie, raça, idade, peso e necessidades especiais.
-6. Usuário seleciona “Cadastrar”.
-7. Sistema registra o pet no banco de dados.
-8. Sistema associa o pet à conta do usuário.
-9. Sistema confirma o cadastro.
-
-**Fluxos alternativos:**
-- Campos obrigatórios não preenchidos:
-  1. Sistema solicita preenchimento correto dos campos obrigatórios.
-
-### 8.3 Cenário – Consultar disponibilidade
-**Ator:** Usuário
-
-**Fluxo principal:**
-1. Usuário abre o sistema.
-2. Usuário realiza login.
-3. Usuário seleciona “Verificar disponibilidade”.
-4. Sistema exibe opções de pesquisa.
-5. Usuário define filtros: data, tipo de quarto e serviços extras.
-6. Sistema processa a busca.
-7. Sistema exibe os quartos disponíveis.
-
-**Fluxos alternativos:**
-- Nenhuma disponibilidade encontrada:
-  1. Sistema informa que não há vagas para a data selecionada.
-
-### 8.4 Cenário – Realizar reserva
-**Ator:** Usuário
-
-**Fluxo principal:**
-1. Usuário abre o aplicativo.
-2. Usuário faz login.
-3. Usuário seleciona "Fazer reserva".
-4. Sistema exibe opções de quartos disponíveis.
-5. Usuário escolhe tipo de quarto e serviços extras (opcionais).
-6. Usuário seleciona o pet que ficará hospedado.
-7. Usuário confirma a reserva.
-8. Sistema registra a reserva.
-9. Sistema gera comprovante digital de reserva.
-10. Sistema exibe confirmação na tela.
-
-**Fluxos alternativos:**
-- Quarto indisponível:
-  1. Sistema informa indisponibilidade.
-  2. Usuário deve escolher outra opção.
-
-### 8.5 Cenário – Notificar atualizações
-**Ator:** Sistema
-
-**Fluxo principal:**
-1. Sistema detecta uma atualização relevante (ex.: foto, relatório, evento de saúde).
-2. Sistema envia notificação push para o usuário.
-3. Usuário recebe a notificação no dispositivo.
-4. Usuário pode abrir o aplicativo para visualizar detalhes.
-
-### 8.6 Cenário – Acessar histórico de reservas
-**Ator:** Usuário
-
-**Fluxo principal:**
-1. Usuário abre o aplicativo.
-2. Usuário realiza login.
-3. Usuário seleciona “Histórico de reservas”.
-4. Sistema consulta as reservas registradas.
-5. Sistema exibe lista de reservas realizadas.
-
-### 8.7 Cenário – Pagar online
-**Ator:** Usuário
-
-**Fluxo principal:**
-
-1. Usuário acessa o sistema.
-2. Usuário realiza login.
-3. Usuário acessa uma reserva realizada.
-4. Sistema apresenta as formas de pagamento disponíveis.
-5. Usuário seleciona o método de pagamento.
-6. Sistema processa o pagamento.
-7. Sistema confirma o pagamento.
-
-**Fluxos alternativos:**
-- Pagamento recusado
-1. Sistema informa erro.
-- Usuário deve escolher outro método ou tentar novamente.
-
-### 8.8 Cenário – Visualizar informações institucionais
-**Ator: Usuário**
-
-**Fluxo principal:**
-
-1. Usuário abre o aplicativo.
-2. Usuário seleciona a opção “Sobre nós”.
-3. Sistema exibe informações sobre:
-4. História do resort
-5. Estrutura
-6. Serviços oferecidos
-7. Usuário visualiza as informações.
-
-### 8.9 Cenário – Chat com suporte
-**Ator: Usuário**
-
-**Fluxo principal:**
-
-1. Usuário abre o aplicativo.
-2. Usuário seleciona o ícone de chat.
-3. Sistema abre a interface de chat.
-4. Usuário envia mensagem ao suporte.
-5. Sistema encaminha a mensagem.
-6. Suporte responde ao usuário.
+> Observação: essa tabela é um resumo. Para os fluxos detalhados (passo a passo e validações), consulte a versão completa dos cenários de uso neste documento.
 
 ## **9. Casos de Teste (CT)**  
 
