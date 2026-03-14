@@ -1,0 +1,55 @@
+@startuml Diagrama_de_Classe_PetVille_Resort
+title Diagrama de Classes - PetVille Resort
+skinparam classAttributeIconSize 0
+
+class Cliente {
+ - nome
+ - email
+ - telefone
+ - senha
+}
+
+class Pet {
+ - nome
+ - especie
+ - raca
+ - idade
+ - peso
+}
+
+class Funcionario {
+ - nome
+ - id
+}
+
+class Chat {
+ - idMensagem
+ - texto
+ - dataHora
+}
+
+class Reserva {
+ - idReserva
+ - dataEntrada
+ - dataSaida
+ - status
+}
+
+class Pagamento {
+ - idPagamento
+ - valor
+ - metodoPagamento
+}
+
+Cliente "1" o-- "0..*" Pet
+Cliente "1" --> "0..*" Reserva
+Cliente "1" --> "0..*" Chat
+
+Pet "1" --> "0..*" Reserva
+
+Reserva "1" *-- "1" Pagamento
+
+Funcionario "1" --> "0..*" Pet
+Funcionario "1" --> "0..*" Chat
+
+@enduml

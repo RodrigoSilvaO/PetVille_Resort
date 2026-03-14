@@ -1,0 +1,49 @@
+@startuml Diagrama_de_Casos_de_Uso_Petville_Resort
+title Diagrama de Casos de Uso - PetVille Resort
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Cliente" as Cliente
+actor "Equipe" as Equipe
+
+
+  (UC01 Gerenciar usuario) as UC01
+  (UC02 Gerenciar pet) as UC02
+  (UC03 Consultar disponibilidade) as UC03
+  (UC04 Realizar reservas) as UC04
+  (UC05 Receber notificacoes) as UC05
+  (UC06 Acessar historico de reservas) as UC06
+  (UC07 Pagamento online) as UC07
+  (UC08 Visualizar sobre nos) as UC08
+  (UC09 Chat) as UC09
+  (UC10 Avaliar servico) as UC10
+  (UC11 Acompanhar estadia) as UC11
+  (UC12 Fazer login) as UC12
+  (UC14 Enviar relatorios) as UC14
+  (UC15 Atualizar status do pet) as UC15
+  (UC16 Responder chat) as UC16
+
+Cliente -- UC01
+Cliente -- UC02
+Cliente -- UC03
+Cliente -- UC04
+Cliente -- UC05
+Cliente -- UC06
+Cliente -- UC07
+Cliente -- UC08
+Cliente -- UC09
+Cliente -- UC10
+Cliente -- UC11
+Cliente -- UC12
+
+Equipe -- UC14
+Equipe -- UC15
+Equipe -- UC16
+
+UC11 ..> UC14 : <<include>>
+UC11 ..> UC15 : <<include>>
+UC09 ..> UC16 : <<include>>
+
+
+@enduml
